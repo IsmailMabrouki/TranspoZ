@@ -1,0 +1,31 @@
+ services:
+#   postgres:
+#     container_name: postgres-sql-trz
+#     image: postgres
+#     environment:
+#       POSTGRES_USER: myuser123
+#       POSTGRES_PASSWORD: mypass123
+#       PGDATA: /var/lib/postgresql/data
+#       POSTGRES_DB: Transpoz
+#     volumes:
+#       - postgres:/data/postgres
+#     ports:
+#       - 5433:5433
+#     networks:
+#       - transpoz-net
+#     restart: unless-stopped
+   mail-dev:
+     container_name: mail-dev-trz
+     image: maildev/maildev
+     ports:
+       - 1080:1080
+       - 1025:1025
+
+
+ networks:
+   transpoz-net:
+     driver: bridge
+
+ volumes:
+   postgres:
+     driver: local

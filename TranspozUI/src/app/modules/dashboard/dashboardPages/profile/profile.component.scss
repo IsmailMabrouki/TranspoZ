@@ -1,0 +1,45 @@
+.user-details {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.details-container {
+    display: flex;
+}
+
+.left-column,
+.right-column {
+    flex: 1;
+}
+
+.left-column {
+    margin-right: 20px; /* Add some space between the columns */
+}
+
+.right-column {
+    border-left: 1px solid #ccc; /* Add a vertical border between columns */
+    padding-left: 20px; /* Add some padding to the right column */
+}
+
+h2 {
+    margin-top: 0; /* Remove top margin for the heading */
+}
+
+ul {
+    list-style-type: none; /* Remove bullets from the list */
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px; /* Add some spacing between list items */
+    font-size: 16px;
+}
+
+li:nth-child(odd) {
+    color: #333; /* Change color of odd list items */
+}

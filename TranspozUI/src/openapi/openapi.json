@@ -1,0 +1,1678 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenApi specification - IsmailMabrouki",
+    "description": "OpenApi documentation for Spring Security",
+    "termsOfService": "Terms of service",
+    "contact": {
+      "name": "Ismail Mabrouki",
+      "url": "https://www.linkedin.com/in/ismail-mabrouki-811a53164/",
+      "email": "ismailmabrouki98@gmail.com"
+    },
+    "license": {
+      "name": "Licence name",
+      "url": "https://some-url.com"
+    },
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8088/api/v1",
+      "description": "Local ENV"
+    },
+    {
+      "url": "https://www.linkedin.com/in/ismail-mabrouki-811a53164/",
+      "description": "PROD ENV"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/user/clients/{id}": {
+      "put": {
+        "tags": [
+          "client"
+        ],
+        "operationId": "updateClient",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "client"
+        ],
+        "operationId": "deleteClient",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/driver/{id}": {
+      "put": {
+        "tags": [
+          "driver"
+        ],
+        "operationId": "updateDriver",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Driver"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Driver"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "driver"
+        ],
+        "operationId": "deleteDriverById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/driver/{driver_id}/deliveries/{id}/status": {
+      "put": {
+        "tags": [
+          "driver"
+        ],
+        "operationId": "updateDeliveryStatus",
+        "parameters": [
+          {
+            "name": "driver_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/admin/users": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "getAllUsers",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "updateUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/{id}/deliveries/create": {
+      "post": {
+        "tags": [
+          "client"
+        ],
+        "operationId": "createDelivery",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeliveryRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Delivery"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/become-client": {
+      "post": {
+        "tags": [
+          "client"
+        ],
+        "operationId": "createClient",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/driver/{id}/addVehicle": {
+      "post": {
+        "tags": [
+          "driver"
+        ],
+        "operationId": "addVehicle",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddVehicleRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/refresh-token": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "refreshToken",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenRefreshRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/authenticate": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "authenticate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthenticationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/{id}/deliveries/mine": {
+      "get": {
+        "tags": [
+          "client"
+        ],
+        "operationId": "getMyDeliveries",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Delivery"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/profile/{id}": {
+      "get": {
+        "tags": [
+          "client"
+        ],
+        "operationId": "getMyProfile",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/drivers_list": {
+      "get": {
+        "tags": [
+          "client"
+        ],
+        "operationId": "getAllDrivers",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Driver"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/drivers_list/{id}": {
+      "get": {
+        "tags": [
+          "client"
+        ],
+        "operationId": "findDriverById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Driver"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/clients_list": {
+      "get": {
+        "tags": [
+          "client"
+        ],
+        "operationId": "getAllClients",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Client"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/clients_list/{id}": {
+      "get": {
+        "tags": [
+          "client"
+        ],
+        "operationId": "getClientById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/driver/{id}/deliveries/assigned": {
+      "get": {
+        "tags": [
+          "driver"
+        ],
+        "operationId": "getAssignedDeliveries",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Delivery"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/driver/profile/{id}": {
+      "get": {
+        "tags": [
+          "driver"
+        ],
+        "operationId": "getMyProfile_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/driver/drivers_list": {
+      "get": {
+        "tags": [
+          "driver"
+        ],
+        "operationId": "getAllDrivers_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Driver"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/driver/drivers_list/{id}": {
+      "get": {
+        "tags": [
+          "driver"
+        ],
+        "operationId": "findDriverById_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Driver"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/driver/clients_list": {
+      "get": {
+        "tags": [
+          "driver"
+        ],
+        "operationId": "getAllClients_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Client"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/driver/clients_list/{id}": {
+      "get": {
+        "tags": [
+          "driver"
+        ],
+        "operationId": "getClientById_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/activate-account": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "confirm",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/admin/users/{id}": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "getUserById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "deleteUser",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/profile/{id}": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "getMyProfile_2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/drivers_list": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "getAllDrivers_2",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Driver"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/clients_list": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "getAllClients_2",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Client"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Address": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "streetAddress": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          }
+        }
+      },
+      "Client": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          }
+        }
+      },
+      "Coordinate": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number",
+            "format": "double"
+          },
+          "y": {
+            "type": "number",
+            "format": "double"
+          },
+          "z": {
+            "type": "number",
+            "format": "double"
+          },
+          "valid": {
+            "type": "boolean"
+          },
+          "coordinate": {
+            "$ref": "#/components/schemas/Coordinate"
+          },
+          "m": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "CoordinateSequence": {
+        "type": "object",
+        "properties": {
+          "measures": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dimension": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CoordinateSequenceFactory": {
+        "type": "object"
+      },
+      "Driver": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "vehicle": {
+            "$ref": "#/components/schemas/Vehicle"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "currentLocation": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "rating": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "Envelope": {
+        "type": "object",
+        "properties": {
+          "null": {
+            "type": "boolean"
+          },
+          "width": {
+            "type": "number",
+            "format": "double"
+          },
+          "height": {
+            "type": "number",
+            "format": "double"
+          },
+          "diameter": {
+            "type": "number",
+            "format": "double"
+          },
+          "minX": {
+            "type": "number",
+            "format": "double"
+          },
+          "minY": {
+            "type": "number",
+            "format": "double"
+          },
+          "maxX": {
+            "type": "number",
+            "format": "double"
+          },
+          "maxY": {
+            "type": "number",
+            "format": "double"
+          },
+          "area": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "Geometry": {
+        "type": "object",
+        "properties": {
+          "envelope": {
+            "$ref": "#/components/schemas/Geometry"
+          },
+          "factory": {
+            "$ref": "#/components/schemas/GeometryFactory"
+          },
+          "userData": {
+            "type": "object"
+          },
+          "length": {
+            "type": "number",
+            "format": "double"
+          },
+          "empty": {
+            "type": "boolean"
+          },
+          "valid": {
+            "type": "boolean"
+          },
+          "simple": {
+            "type": "boolean"
+          },
+          "boundaryDimension": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "envelopeInternal": {
+            "$ref": "#/components/schemas/Envelope"
+          },
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Coordinate"
+            }
+          },
+          "numPoints": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dimension": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "coordinate": {
+            "$ref": "#/components/schemas/Coordinate"
+          },
+          "geometryType": {
+            "type": "string"
+          },
+          "boundary": {
+            "$ref": "#/components/schemas/Geometry"
+          },
+          "numGeometries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rectangle": {
+            "type": "boolean"
+          },
+          "precisionModel": {
+            "$ref": "#/components/schemas/PrecisionModel"
+          },
+          "centroid": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "interiorPoint": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "srid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "area": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "GeometryFactory": {
+        "type": "object",
+        "properties": {
+          "precisionModel": {
+            "$ref": "#/components/schemas/PrecisionModel"
+          },
+          "coordinateSequenceFactory": {
+            "$ref": "#/components/schemas/CoordinateSequenceFactory"
+          },
+          "srid": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "geometry": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "address": {
+            "type": "string"
+          }
+        }
+      },
+      "Point": {
+        "type": "object",
+        "properties": {
+          "envelope": {
+            "$ref": "#/components/schemas/Geometry"
+          },
+          "factory": {
+            "$ref": "#/components/schemas/GeometryFactory"
+          },
+          "userData": {
+            "type": "object"
+          },
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Coordinate"
+            }
+          },
+          "empty": {
+            "type": "boolean"
+          },
+          "simple": {
+            "type": "boolean"
+          },
+          "y": {
+            "type": "number",
+            "format": "double"
+          },
+          "x": {
+            "type": "number",
+            "format": "double"
+          },
+          "boundaryDimension": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "coordinateSequence": {
+            "$ref": "#/components/schemas/CoordinateSequence"
+          },
+          "numPoints": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dimension": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "coordinate": {
+            "$ref": "#/components/schemas/Coordinate"
+          },
+          "geometryType": {
+            "type": "string"
+          },
+          "boundary": {
+            "$ref": "#/components/schemas/Geometry"
+          },
+          "length": {
+            "type": "number",
+            "format": "double"
+          },
+          "valid": {
+            "type": "boolean"
+          },
+          "envelopeInternal": {
+            "$ref": "#/components/schemas/Envelope"
+          },
+          "numGeometries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rectangle": {
+            "type": "boolean"
+          },
+          "precisionModel": {
+            "$ref": "#/components/schemas/PrecisionModel"
+          },
+          "centroid": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "interiorPoint": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "srid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "area": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "PrecisionModel": {
+        "type": "object",
+        "properties": {
+          "scale": {
+            "type": "number",
+            "format": "double"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "floating": {
+            "type": "boolean"
+          },
+          "offsetY": {
+            "type": "number",
+            "format": "double"
+          },
+          "offsetX": {
+            "type": "number",
+            "format": "double"
+          },
+          "maximumSignificantDigits": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Type": {
+        "type": "object"
+      },
+      "Vehicle": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "model": {
+            "type": "string"
+          },
+          "licensePlate": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "CAR",
+              "VAN",
+              "TRUCK"
+            ]
+          },
+          "capacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "color": {
+            "type": "string"
+          },
+          "make": {
+            "type": "string"
+          },
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "GrantedAuthority": {
+        "type": "object",
+        "properties": {
+          "authority": {
+            "type": "string"
+          }
+        }
+      },
+      "Role": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "enum": [
+              "USER",
+              "ADMIN",
+              "DRIVER"
+            ]
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastModifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "accountLocked": {
+            "type": "boolean"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastModifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "accountNonExpired": {
+            "type": "boolean"
+          },
+          "credentialsNonExpired": {
+            "type": "boolean"
+          },
+          "accountNonLocked": {
+            "type": "boolean"
+          },
+          "authorities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GrantedAuthority"
+            }
+          }
+        }
+      },
+      "DeliveryRequest": {
+        "type": "object",
+        "properties": {
+          "customerName": {
+            "type": "string"
+          },
+          "assignedDriverId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "items": {
+            "type": "string"
+          },
+          "pickupLocation": {
+            "type": "string"
+          },
+          "deliveryLocation": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "IN_PROGRESS",
+              "DELIVERED"
+            ]
+          },
+          "estimatedDeliveryTime": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "Delivery": {
+        "required": [
+          "customerName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "customerName": {
+            "type": "string"
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "items": {
+            "type": "string"
+          },
+          "pickupLocation": {
+            "type": "string"
+          },
+          "deliveryLocation": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "IN_PROGRESS",
+              "DELIVERED"
+            ]
+          },
+          "estimatedDeliveryTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "assignedDriver": {
+            "$ref": "#/components/schemas/Driver"
+          },
+          "statusDescription": {
+            "type": "string"
+          }
+        }
+      },
+      "AddVehicleRequest": {
+        "type": "object",
+        "properties": {
+          "driverId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "model": {
+            "type": "string"
+          },
+          "licensePlate": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "CAR",
+              "VAN",
+              "TRUCK"
+            ]
+          },
+          "capacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "color": {
+            "type": "string"
+          },
+          "make": {
+            "type": "string"
+          },
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "RegistrationRequest": {
+        "required": [
+          "email",
+          "firstname",
+          "lastname",
+          "password",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "maxLength": 2147483647,
+            "minLength": 8,
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      },
+      "TokenRefreshRequest": {
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string"
+          }
+        }
+      },
+      "AuthenticationRequest": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "maxLength": 2147483647,
+            "minLength": 8,
+            "type": "string"
+          }
+        }
+      },
+      "AuthenticationResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "JWT auth description",
+        "in": "header",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

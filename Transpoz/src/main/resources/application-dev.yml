@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Transpoz  # Replace with your actual service name if different
+    username: postgres
+    password: azerty
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 20000  # Optional: Connection timeout in milliseconds
+      pool-name: MyPostgreSQLPool  # Optional: Custom pool name
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+      database: postgresql
+      #database-platform: org.hibernate.dialect.PostgreSQLDialect
+      dialect: org.hibernate.spatial.dialect.postgis.PostGIS9Dialect  # Specify PostGIS dialect
+
+  mail:
+    host: localhost
+    port:  1025
+    username : ismail
+    password : ismail
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        reconnection: 5000
+        timeout : 3000
+        rewriterule: 5000
+
+application:
+  security:
+    jwt:
+      mailing:
+        frontend:
+          activation-url: http://localhost:4200/activate-account
+      secret-key: 13D9060ACBE6A8FE3202E284ED8A83BFF5DF75FF08BBE1E35045F33B20ACDCB0
+      expiration: 8640000   # 1 day
+      refresh-token:
+        expiration: 86400000 # 7 days
+
+        file:
+          uploads:
+            photos-output-path: ./uploads

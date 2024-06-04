@@ -1,0 +1,24 @@
+<div *ngIf="delivery" class="card delivery-card">
+    <div class="card-header">
+      <h5 class="card-title">{{ delivery.customerName }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Delivery ID: {{ delivery.id }}</h6>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><strong>Customer ID:</strong> {{ delivery.customerId }}</p>
+      <p class="card-text"><strong>Items:</strong> {{ delivery.items }}</p>
+      <p class="card-text"><strong>Pickup Location:</strong> {{ delivery.pickupLocation }}</p>
+      <p class="card-text"><strong>Delivery Location:</strong> {{ delivery.deliveryLocation }}</p>
+      <p class="card-text"><strong>Status:</strong> {{ delivery.status }}</p>
+      <p class="card-text"><strong>Estimated Delivery Time:</strong> {{ delivery.estimatedDeliveryTime }} mins</p>
+      <p class="card-text"><strong>Status Description:</strong> {{ delivery.statusDescription }}</p>
+      <p class="card-text"><strong>Assigned Driver:</strong> {{ delivery.assignedDriver?.name }}</p>
+      <p class="card-text"><strong>Driver Email:</strong> {{ delivery.assignedDriver?.email }}</p>
+      <p class="card-text"><strong>Driver Phone:</strong> {{ delivery.assignedDriver?.phoneNumber }}</p>
+      <p class="card-text"><strong>Vehicle Model:</strong> {{ delivery.assignedDriver?.vehicle?.model }}</p>
+      <p class="card-text"><strong>Vehicle License Plate:</strong> {{ delivery.assignedDriver?.vehicle?.licensePlate }}</p>
+    </div>
+    <div *ngIf="hasRole('driver')">
+      <button (click)="changeStatus()">Change Status</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,27 @@
+/* footer.component.scss */
+
+.footer {
+  position: fixed; /* Fix the footer position */
+  bottom: 0; /* Position it at the bottom of the viewport */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Make it span the full width of the viewport */
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+p {
+  margin: 0 10px;
+}

@@ -1,0 +1,68 @@
+<h3>Drivers List</h3>
+
+<hr>
+<div class="d-flex justify-content-start gap-2 flex-wrap">
+    <app-driver-card [driver]="driver" *ngFor="let driver of drivers" (details)="displayDriverDetails($event)"></app-driver-card>
+   
+</div>
+<div class ="d-flex justify-content-center mt-3">
+    <nav aria-label="page navigation"></nav>
+    <ul class="pagination" >
+        <li class="page-item">
+            <a
+            (click)="gotoFirstPage()"
+            class="page-link"
+            href="javascript:void(0)"
+            aria-label="previous"
+            [class.disabled]="page == 0"
+            >
+            <i class="fa-solid fa-angles-left" ></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a
+            (click)="gotoPreviousPage()"
+            class="page-link"
+            href="javascript:void(0)"
+            aria-label="previous"
+            [class.disabled]="page == 0"
+            >
+            <i class="fa-solid fa-angle-left" ></i>
+            </a>
+        </li>
+        <li
+            
+        >
+            <a
+            (click)="gotoPage(0)"
+            class="page-link"
+            href="javascript:void(0)"
+            aria-label="previous"
+            >
+             1
+            </a>
+
+        </li>
+        <li class="page-item">
+            <a
+            (click)="gotoNextPage()"
+            class="page-link"
+            href="javascript:void(0)"
+            aria-label="next"
+            [class.disabled]=""
+            >
+            <i class="fa-solid fa-chevron-right" ></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a
+            (click)="gotoLastPage()"
+            class="page-link"
+            href="javascript:void(0)"
+            aria-label="previous"
+            >
+            <i class="fa-solid fa-angles-right" ></i>
+            </a>
+        </li>
+    </ul>
+</div>

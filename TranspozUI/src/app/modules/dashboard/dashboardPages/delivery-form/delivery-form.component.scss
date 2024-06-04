@@ -1,0 +1,54 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Optional: Set minimum height for full viewport */
+  }
+  
+  .form-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    width: 400px; /* Adjust width as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-box input,
+  .form-box select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+  
+  .form-box input[readonly] {
+    background-color: #eee;
+    opacity: 1; /* Reset opacity for better readability */
+  }
+  
+  .form-box select {
+    cursor: pointer; /* Indicate interactivity for dropdowns */
+  }
+  
+  .form-box button[type="submit"] {
+    background-color: #4CAF50; /* Green color for submit button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .form-box button[type="submit"]:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+  }
+  
+  

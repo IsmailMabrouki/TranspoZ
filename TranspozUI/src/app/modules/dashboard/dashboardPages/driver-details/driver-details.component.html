@@ -1,0 +1,25 @@
+<div *ngIf="driver" class="driver-details">
+    <h2>Détails du conducteur</h2>
+    <p><strong>Nom :</strong> {{ driver.name }}</p>
+    <p><strong>Email :</strong> {{ driver.email }}</p>
+    <p><strong>Phone :</strong> {{ driver.phoneNumber}}</p>
+    <p><strong>rating :</strong> {{ driver.rating}}</p>
+    <p><strong>Location :</strong> {{ driver.currentLocation}}</p>
+    <p><strong>available :</strong> {{ driver.available}}</p>
+    <!-- Ajoutez d'autres détails du conducteur ici en fonction de votre modèle -->
+    <div *ngIf="driver.available">
+      <button (click)="onCreateDelivery(driver)">Order Delivery</button>
+
+    </div>
+    
+  </div>
+  
+  
+  <div *ngIf="loading">
+    Chargement en cours...
+  </div>
+  
+  <div *ngIf="!driver && !loading">
+    Aucun conducteur trouvé avec cet identifiant.
+  </div>
+  

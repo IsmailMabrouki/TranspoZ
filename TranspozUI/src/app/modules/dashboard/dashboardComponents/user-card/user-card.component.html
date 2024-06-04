@@ -1,0 +1,25 @@
+<!-- User Card -->
+<div *ngIf="user" class="card" style="width: 20rem;">
+    <img height="150" width="20" [src]="userCover"  class="card-img-top" alt="User Image">
+    <div class="card-body overflow">
+      <h5 class="card-title fs-6 text-nowrap fw-bold mb-1"><i class="fa-solid fa-user"></i>&nbsp;{{ user.fullName }}</h5>
+      <h5 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-solid fa-envelope"></i>&nbsp;{{ user.email }}</h5>
+      <h5 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-solid fa-user-tag"></i>&nbsp;Id:{{ user.id }}</h5>
+      <h5 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-solid fa-calendar"></i>&nbsp;{{ user.dateOfBirth}}</h5>
+      <h5 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-solid fa-user-shield"></i>&nbsp;{{ user.role?.name }}</h5>
+      <hr>
+      <div class="card-footer d-flex gap-2 justify-content-between align-items-center">
+        <div class="d-flex gap-2">
+          <i (click)="onShowDetails()" class="fas fa-circle-info text-primary"></i>
+          <i class="fas fa-list-check text-primary"></i>
+          <i class="fas fa-heart text-primary"></i>
+        </div>
+        <div class="d-flex gap-2">
+          <i (click)="onEdit()" class="fas fa-edit text-success"></i>
+          <i class="fas fa-share-nodes text-primary"></i>
+          <i (click)="onDeleteUser()" class="fas fa-archive text-danger"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  

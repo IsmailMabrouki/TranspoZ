@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f70a8732-3b50-4408-ad29-33e3480d1778" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;ismailmabrouki98&quot;,
+      &quot;fullname&quot;: &quot;Ismail Mabrouki&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab.com/ismailmabrouki98/transpoz.git&quot;,
+    &quot;second&quot;: &quot;d206b3b0-0113-4946-8251-dfc6a96b3f7a&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2f3BV2BG2Pz7fqYOl3diX9UKrv0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ismai/OneDrive/Bureau/Projet PFA/Transpoz/Transpoz",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f70a8732-3b50-4408-ad29-33e3480d1778" name="Changes" comment="" />
+      <created>1713019901985</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713019901985</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

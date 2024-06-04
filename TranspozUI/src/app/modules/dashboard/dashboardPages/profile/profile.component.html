@@ -1,0 +1,35 @@
+<div *ngIf="user" class="user-details">
+    <h2>Profile</h2>
+    <div class="details-container">
+        <div class="left-column">
+            <ul>
+                <li>ID: {{ user.id }}</li>
+                <hr>
+                <li>First Name: {{ user.firstname }}</li>
+                <hr>
+                <li>Last Name: {{ user.lastname }}</li>
+                <hr>
+                <li>Date of Birth: {{ user.dateOfBirth }}</li>
+                <hr>
+                <li>Email: {{ user.email }}</li>
+                <hr>
+                <li>Role Name: {{ user.role?.name }}</li>
+            </ul>
+        </div>
+        <div class="right-column">
+            <ul>
+                <li>Account Locked: {{ user.accountLocked }}</li>
+                <hr>
+                <li>Account Non Locked: {{ user.accountNonLocked }}</li>
+                <hr>
+                <li>Account Non Expired: {{ user.accountNonExpired }}</li>
+                <hr>
+                <li>Credentials Non Expired: {{ user.credentialsNonExpired }}</li>
+                <hr>
+                <li>Enabled: {{ user.enabled }}</li>
+                <hr>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</div>

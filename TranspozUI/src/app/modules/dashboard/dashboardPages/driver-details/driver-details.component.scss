@@ -1,0 +1,56 @@
+.driver-details {
+    font-family: Arial, sans-serif; /* Set font family */
+    margin: 0 auto; /* Center the details horizontally */
+    max-width: 600px; /* Limit the width of the details */
+    background-color: #f9f9f9; /* Set background color for the box */
+    border: 1px solid #ccc; /* Add border to the box */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    padding: 20px; /* Add padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow to the box */
+    text-align: center; /* Center text inside the box */
+  
+    h2 {
+      font-size: 24px; /* Set font size for headings */
+      color: #333; /* Set text color for headings */
+      margin-bottom: 20px; /* Add spacing below the heading */
+    }
+  
+    p {
+      font-size: 16px; /* Set font size for paragraphs */
+      margin-bottom: 10px; /* Add spacing between paragraphs */
+    }
+  
+    strong {
+      font-weight: bold; /* Make strong elements bold */
+    }
+  
+    .button-container {
+      margin-top: 20px; /* Add spacing above the button */
+    }
+  
+    button {
+      padding: 10px 20px; /* Add padding to the button */
+      font-size: 16px; /* Set font size for the button */
+      background-color: #007bff; /* Set background color for the button */
+      color: #fff; /* Set text color for the button */
+      border: none; /* Remove border */
+      border-radius: 4px; /* Add border radius for rounded corners */
+      cursor: pointer; /* Change cursor to pointer on hover */
+      transition: background-color 0.3s; /* Add transition for smoother hover effect */
+  
+      &:hover {
+        background-color: #0056b3; /* Change background color on hover */
+      }
+    }
+  
+    .loading {
+      color: #666; /* Set text color for loading message */
+      margin-top: 20px; /* Add spacing above the loading message */
+    }
+  
+    .no-driver {
+      color: #f00; /* Set text color for no driver message */
+      margin-top: 20px; /* Add spacing above the message */
+    }
+  }
+  

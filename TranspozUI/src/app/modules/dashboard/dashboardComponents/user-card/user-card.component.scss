@@ -1,0 +1,23 @@
+.card {
+    margin: 1rem 0;
+    .card-body {
+      overflow: hidden;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .card-subtitle {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .text-nowrap {
+      white-space: nowrap;
+    }
+  }
+  

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TranspoZServerApplication<Transpoz>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.IsmailMabrouki.Transpoz.TranspoZServerApplication",
+            "projectName": "Transpoz",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

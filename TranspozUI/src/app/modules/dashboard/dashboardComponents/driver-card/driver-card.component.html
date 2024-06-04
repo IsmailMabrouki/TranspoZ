@@ -1,0 +1,34 @@
+<div
+    class="card"
+    style="width: 20rem;"
+   
+>
+<img height="150" width="20" [src]="driverCover" class="card-img-top" alt="...">
+<div class="card-body overflow" >
+    <h5 class="card-title fs-6 text-nowwrap fw-bold mb-1"><i class="fa-solid fa-user"></i>&nbsp;{{driver.name}}</h5>
+    <h5 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-sharp fa-solid fa-location-pin"></i> &nbsp;{{address}}</h5>
+
+    <h5 class="card-title fs-6 text-nowwrap fw-bold mb-1"><i class="fa-solid fa-at"></i>&nbsp;{{driver.email}}</h5>
+
+    <h5 class="card-title fs-6 text-nowwrap fw-bold mb-1"><i class="fa-solid fa-phone"></i>&nbsp;{{driver.phoneNumber}}</h5>
+
+    
+    <h5 class="card-title fs-6 text-nowwrap fw-bold mb-1"><i class="fa-solid fa-truck"></i>&nbsp;{{vehicleModel}}</h5>
+    <h5 class="card-title fs-6 text-nowwrap fw-bold mb-1"><i class="fa-brands fa-connectdevelop"></i>&nbsp;{{available}}</h5>
+    <hr>
+    <div class="card-footer d-flex gap-2 justify-content-between align-items-center">
+        <div class="d-flex gap-2">
+            <h5 class="card-title fs-6 text-nowwrap fw-bold mb-1"><i class="fa-solid fa-face-smile"></i>&nbsp;{{driver.rating}}</h5>
+        </div>
+        <div class="d-flex gap-2">
+        <i (click)="onShowDetails()" class="fas fa-circle-info text-primary"></i>
+        <i  class="fas fa-list-check text-primary"></i>
+        <i  class="fas fa-heart text-primary"></i>
+        </div>
+        <div class="d-flex gap-2" *ngIf="hasRole('admin')">
+            <i  class="fas fa-edit text-success"></i>
+            <i  class="fas fa-share-nodes text-primary"></i>
+            <i  class="fas fa-archive text-darger"></i>
+            </div>
+</div>
+</div>

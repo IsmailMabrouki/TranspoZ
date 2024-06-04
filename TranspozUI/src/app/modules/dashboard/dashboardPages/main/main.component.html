@@ -1,0 +1,15 @@
+<div class="d-flex flex-column gap-1">
+    <app-menu></app-menu>
+    <ng-container *ngIf="showCard">
+      <app-hero-section></app-hero-section>
+      <app-testimonials></app-testimonials>
+      <app-footer></app-footer>
+    </ng-container>
+    <div class="pe-2 ps-2">
+      <router-outlet>
+      </router-outlet>
+    </div>
+  </div>
+  
+  
+

@@ -1,0 +1,379 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.IsmailMabrouki.Transpoz.auth.AuthenticationController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_183477815 { 
+   	label=IsmailMabrouki
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_124570968 { 
+   	label=Transpoz
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   Address806232878[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Address</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   city: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   country: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   postalCode: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   state: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   streetAddress: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+AuthenticationController1746695733[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AuthenticationController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   service: AuthenticationService [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ authenticate(request: AuthenticationRequest): ResponseEntity&lt;AuthenticationResponse&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ confirm(token: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ register(request: RegistrationRequest): ResponseEntity&lt;?&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+AuthenticationResponse1746695733[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AuthenticationResponse</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   token: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): AuthenticationResponseBuilder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+AuthenticationService1746695733[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AuthenticationService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   activationUrl: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   authenticationManager: AuthenticationManager [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   clientRepository: ClientRepository [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   driverRepository: DriverRepository [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   emailService: EmailService [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jwtService: JwtService [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   passwordEncoder: PasswordEncoder [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   roleRepository: RoleRepository [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tokenRepository: TokenRepository [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userRepository: UserRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ activateAccount(token: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ authenticate(request: AuthenticationRequest): AuthenticationResponse</TD></TR>
+<TR><TD ALIGN="LEFT" >- generateActivationCode(length: int): String</TD></TR>
+<TR><TD ALIGN="LEFT" >- generateAndSaveActivationToken(user: User): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ register(request: RegistrationRequest)</TD></TR>
+<TR><TD ALIGN="LEFT" >- sendValidationEmail(user: User)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Client806232878[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Client</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   address: Address [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   email: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   phoneNumber: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): ClientBuilder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Driver840419211[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Driver</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   available: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currentLocation: Location [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   email: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   licenseNumber: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   phoneNumber: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   rating: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   vehicle: Vehicle [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): DriverBuilder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+EmailService1690444761[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)EmailService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   mailSender: JavaMailSender [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   templateEngine: SpringTemplateEngine [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ sendEmail(to: String, username: String, emailTemplate: EmailTemplateName, confirmationUrl: String, activationCode: String, subject: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+JwtService1736399331[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)JwtService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   jwtExpiration: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   secretKey: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- buildToken(extraClaims: Map&lt;String, Object&gt;, userDetails: UserDetails, expiration: long): String</TD></TR>
+<TR><TD ALIGN="LEFT" >- extractAllClaims(token: String): Claims</TD></TR>
+<TR><TD ALIGN="LEFT" >+ extractClaim(token: String, claimsResolver: Function&lt;Claims, T&gt;): T</TD></TR>
+<TR><TD ALIGN="LEFT" >- extractExpiration(token: String): Date</TD></TR>
+<TR><TD ALIGN="LEFT" >+ extractUsername(token: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ generateToken(userDetails: UserDetails): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ generateToken(extraClaims: Map&lt;String, Object&gt;, userDetails: UserDetails): String</TD></TR>
+<TR><TD ALIGN="LEFT" >- isTokenExpired(token: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ isTokenValid(token: String, userDetails: UserDetails): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Location1606647208[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Location</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   address: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   city: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   country: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   latitude: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   longitude: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   postalCode: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Role1746195303[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Role</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   createdDate: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   lastModifiedDate: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: UserRole [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   users: List&lt;User&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): RoleBuilder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Token87390973[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Token</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   createdAt: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   expiredAt: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   token: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   user: User [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   validatedAt: LocalDateTime [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): TokenBuilder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+User87390973[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)User</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   accountLocked: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   createdDate: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   dateOfBirth: LocalDate [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   email: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   enabled: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   firstname: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   lastModifiedDate: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   lastname: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   password: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   role: Role [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): UserBuilder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Vehicle1295102935[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Vehicle</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   capacity: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   color: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   driver: Driver [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   licensePlate: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   make: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   model: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   type: VehicleType [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   year: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): VehicleBuilder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+AuthenticationController1746695733 -> AuthenticationService1746695733[label="service
+[0..1]"];
+AuthenticationService1746695733 -> AuthenticationResponse1746695733[label="authenticate() -> builder()"];
+AuthenticationService1746695733 -> Client806232878[label="register() -> builder()"];
+AuthenticationService1746695733 -> Driver840419211[label="register() -> builder()"];
+AuthenticationService1746695733 -> EmailService1690444761[label="emailService
+[0..1]"];
+AuthenticationService1746695733 -> JwtService1736399331[label="jwtService
+[0..1]"];
+AuthenticationService1746695733 -> Role1746195303[label="register() -> builder()"];
+AuthenticationService1746695733 -> Token87390973[label="generateAndSaveActivationToken() -> builder()"];
+AuthenticationService1746695733 -> User87390973[label="register() -> builder()"];
+Client806232878 -> Address806232878[label="address
+[0..1]"];
+Driver840419211 -> Location1606647208[label="currentLocation
+[0..1]"];
+Driver840419211 -> Vehicle1295102935[label="vehicle
+[0..1]"];
+Role1746195303 -> User87390973[label="users
+[0..*]"];
+Token87390973 -> User87390973[label="user
+[0..1]"];
+    
+}
+@enduml

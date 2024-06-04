@@ -1,0 +1,47 @@
+<div class="form-container">
+
+<form [formGroup]="deliveryForm" (ngSubmit)="onSubmit()" class="form-box">
+  <div>
+    <label for="customerName">Customer Name:</label>
+    <input id="customerName" formControlName="customerName" readonly>
+  </div>
+
+  <div>
+    <label for="assignedDriverId">Assigned Driver ID:</label>
+    <input id="assignedDriverId" formControlName="assignedDriverId" readonly>
+  </div>
+
+  <div>
+    <label for="items">Items:</label>
+    <input id="items" formControlName="items">
+  </div>
+
+  <div>
+    <label for="pickupLocation">Pickup Location:</label>
+    <input id="pickupLocation" formControlName="pickupLocation">
+  </div>
+
+  <div>
+    <label for="deliveryLocation">Delivery Location:</label>
+    <input id="deliveryLocation" formControlName="deliveryLocation">
+  </div>
+
+  <div>
+    <label for="status">Status:</label>
+    <select id="status" formControlName="status" [disabled]="!isDriver">
+      <option value="PENDING">PENDING</option>
+      <option value="IN_PROGRESS">IN_PROGRESS</option>
+      <option value="DELIVERED">DELIVERED</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="estimatedDeliveryTime">Estimated Delivery Time (mins):</label>
+    <input id="estimatedDeliveryTime" formControlName="estimatedDeliveryTime" type="number">
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit">Submit</button>
+</form>
+
+</div>

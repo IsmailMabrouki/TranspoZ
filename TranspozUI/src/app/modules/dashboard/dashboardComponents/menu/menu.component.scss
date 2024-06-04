@@ -1,0 +1,32 @@
+li > a {
+    &:hover {
+      background-color: #d6e5f1;
+      border-radius: 5px;
+      text-decoration: underline;
+    }
+    &.active {
+      color: #24a7e9;
+      border-radius: 5px;
+    }
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  

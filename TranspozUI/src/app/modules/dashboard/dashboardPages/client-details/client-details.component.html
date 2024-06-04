@@ -1,0 +1,18 @@
+<!-- Client Details -->
+<div class="client-details">
+  <div *ngIf="client">
+    <h2>Détails du client</h2>
+    <p><strong>Nom :</strong> {{ client.name }}</p>
+    <p><strong>Email :</strong> {{ client.email }}</p>
+    <p><strong>Phone :</strong> {{ client.phoneNumber }}</p>
+    <p><strong>Address :</strong> {{ client.address?.streetAddress }}, {{ client.address?.city }}</p>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    Chargement en cours...
+  </div>
+
+  <div *ngIf="!client && !loading" class="no-data">
+    Aucun  client trouvé avec cet identifiant.
+  </div>
+</div>
